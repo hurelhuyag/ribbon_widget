@@ -11,12 +11,14 @@ Installing:
 
 In your pubspec.yaml
 
+```
 dependencies:
 
 ribbon: ^0.0.1
-  
-Example Usage:
+```
 
+Example Usage:
+```
 import 'package:ribbon/ribbon.dart';
 
 Ribbon(
@@ -40,9 +42,7 @@ color: Colors.redAccent,
 location: location,
 
 child: )
-
-
-
+````
 
 ## Getting Started
 
