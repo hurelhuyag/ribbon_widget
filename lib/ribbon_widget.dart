@@ -26,7 +26,7 @@ class Ribbon extends StatelessWidget {
   final Widget child;
 
   const Ribbon(
-      {required Key key,
+      {Key? key,
       required this.nearLength,
       required this.farLength,
       required this.title,
@@ -239,7 +239,7 @@ class _RibbonPainter extends CustomPainter {
             vec.add(Offset(farLength - size.height, 0));
             if (nearLength <= size.height) {
               path.lineTo(0, 0);
-              vec.add(Offset(0, 0));
+              vec.add(const Offset(0, 0));
               path.lineTo(0, size.height - nearLength);
               vec.add(Offset(0, size.height - nearLength));
             } else {
@@ -292,11 +292,10 @@ class _RibbonPainter extends CustomPainter {
       case RibbonLocation.bottomEnd:
         return -math.pi / 4;
     }
-    return 0;
   }
 
   Offset _center(List<Offset> vecs) {
-    double sum_x = 0, sum_y = 0, sum_s = 0;
+    double sumX = 0, sumY = 0, sumS = 0;
     double x1 = vecs[0].dx;
     double y1 = vecs[0].dy;
     double x2 = vecs[1].dx;
@@ -306,14 +305,14 @@ class _RibbonPainter extends CustomPainter {
       x3 = vecs[i].dx;
       y3 = vecs[i].dy;
       double s = ((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2.0;
-      sum_x += (x1 + x2 + x3) * s;
-      sum_y += (y1 + y2 + y3) * s;
-      sum_s += s;
+      sumX += (x1 + x2 + x3) * s;
+      sumY += (y1 + y2 + y3) * s;
+      sumS += s;
       x2 = x3;
       y2 = y3;
     }
-    double cx = sum_x / sum_s / 3.0;
-    double cy = sum_y / sum_s / 3.0;
+    double cx = sumX / sumS / 3.0;
+    double cy = sumY / sumS / 3.0;
     return Offset(cx, cy);
   }
 }
