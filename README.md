@@ -1,7 +1,8 @@
 # ribbon
 
 A Ribbon decoration on a widget.
-![](screenshot/s1.png)
+![s1](https://user-images.githubusercontent.com/22388017/150092364-7b3b8524-c3e6-49eb-a919-29aaf1678972.png)
+
 
 use a Ribbon to decorate a Widget such as container,card...etc.
 
@@ -11,12 +12,14 @@ Installing:
 
 In your pubspec.yaml
 
+```
 dependencies:
 
-ribbon: ^0.0.1
-  
-Example Usage:
+ribbon_widget: ^1.0.4
+```
 
+Example Usage:
+```
 import 'package:ribbon/ribbon.dart';
 
 Ribbon(
@@ -40,9 +43,7 @@ color: Colors.redAccent,
 location: location,
 
 child: )
-
-
-
+````
 
 ## Getting Started
 
@@ -51,6 +52,6 @@ This project is a starting point for a Dart
 a library module containing code that can be shared easily across
 multiple Flutter or Dart projects.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
+For help getting started with Flutter, view our
+[online documentation](https://flutter.io/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
