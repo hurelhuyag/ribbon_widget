@@ -1,7 +1,8 @@
 # ribbon
 
 A Ribbon decoration on a widget.
-![](screenshot/s1.png)
+![s1](https://user-images.githubusercontent.com/22388017/150092364-7b3b8524-c3e6-49eb-a919-29aaf1678972.png)
+
 
 use a Ribbon to decorate a Widget such as container,card...etc.
 
