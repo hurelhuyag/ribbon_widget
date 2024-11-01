@@ -17,6 +17,7 @@ enum RibbonLocation {
 }
 
 class Ribbon extends StatelessWidget {
+  final bool visible;
   final double nearLength;
   final double farLength;
   final String title;
@@ -27,6 +28,7 @@ class Ribbon extends StatelessWidget {
 
   const Ribbon(
       {Key? key,
+      this.visible = true,
       required this.nearLength,
       required this.farLength,
       required this.title,
@@ -40,6 +42,7 @@ class Ribbon extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomPaint(
         foregroundPainter: _RibbonPainter(
+          visible: visible,
           nearLength: nearLength,
           farLength: farLength,
           title: title,
@@ -52,6 +55,7 @@ class Ribbon extends StatelessWidget {
 }
 
 class _RibbonPainter extends CustomPainter {
+  bool visible;
   double nearLength;
   double farLength;
   final String title;
@@ -73,7 +77,8 @@ class _RibbonPainter extends CustomPainter {
   );
 
   _RibbonPainter(
-      {required this.nearLength,
+      {required this.visible,
+      required this.nearLength,
       required this.farLength,
       required this.title,
       required this.titleStyle,
@@ -83,6 +88,9 @@ class _RibbonPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     if (!initialized) _initializ(size);
+    if (!visible) {
+      return;
+    }
     // canvas.drawPath(pathRibbon, paintShadow);
     canvas
       ..drawShadow(pathRibbon, const Color(0x7F000000), 2.0, true)
